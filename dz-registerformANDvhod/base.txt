@@ -1,0 +1,2 @@
+a:2:{s:5:"login";s:10:"dxgdsgsfsf";s:4:"mail";s:18:"2sdgsdg@2dsgsdg.ty";} 
+a:2:{s:5:"login";s:10:"dxgdsgsfsf";s:4:"mail";s:18:"3sdgsdg@2dsgsdg.ty";}
