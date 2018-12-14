@@ -3,8 +3,8 @@
 class Operation
 
 {
-    private $a;
-    private $b;
+    protected $a;
+    protected $b;
 
     public function __construct($a, $b)
     {
@@ -13,9 +13,11 @@ class Operation
     }
 
 
-    public function execute($a, $b) {
+    public function execute() {
         return;
     }
+
+
 
 
 }
@@ -25,8 +27,16 @@ class Operation
 
 class Plus extends Operation {
 
-    public function execute($a, $b) {
-        return $a+$b;
+
+    public function __construct($a, $b)
+    {
+        parent::__construct($a, $b);
+    }
+
+
+
+    public function execute() {
+        return $this->a+ $this->b;
     }
 
 
@@ -35,8 +45,16 @@ class Plus extends Operation {
 
 class Minus extends Operation {
 
-    public function execute($a, $b) {
-        return $a-$b;
+
+    public function __construct($a, $b)
+    {
+        parent::__construct($a, $b);
+    }
+
+
+
+    public function execute() {
+        return $this->a - $this->b;
     }
 
 
@@ -45,13 +63,13 @@ class Minus extends Operation {
 
 
 
-//class Calculator {
-//
-//    public static getInstance($a,$b,$operation){
-//
-//}
+class Calculator {
 
-//}
+    public static getInstance($a,$b,$operation){
+
+}
+
+}
 
 
 
@@ -66,6 +84,8 @@ $obj->execute();
 
 
 var_dump($obj);
+
+
 
 
 ?>
