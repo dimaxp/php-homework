@@ -1,2 +1,4 @@
-a:2:{s:5:"login";s:10:"dxgdsgsfsf";s:4:"mail";s:18:"2sdgsdg@2dsgsdg.ty";} 
-a:2:{s:5:"login";s:10:"dxgdsgsfsf";s:4:"mail";s:18:"3sdgsdg@2dsgsdg.ty";}
+a:3:{s:5:"login";s:7:"fffff23";s:4:"mail";s:10:"fff@ggg.ru";s:5:"passw";s:5:"12345";}
+a:3:{s:5:"login";s:8:"fffff232";s:4:"mail";s:10:"fff@ggg.ru";s:5:"passw";s:5:"12345";}
+a:3:{s:5:"login";s:4:"ыы";s:4:"mail";s:6:"2@2.ru";s:5:"passw";s:60:"$2y$10$TnEIksLtF0Wf7eZa56jV6O5xJVxkCRSlLVzRrKL6AEe5/jQHq/ZUu";}
+a:3:{s:5:"login";s:6:"dimaxp";s:4:"mail";s:9:"dd@ggg.ru";s:5:"passw";s:60:"$2y$10$ABhfOULXF9bQQIPFj1y.J.skUNFuwEIvZWCf5fJo/9EHaS.X4RDlC";}

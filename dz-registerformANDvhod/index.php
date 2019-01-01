@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $post = $_POST;
 //if($post['login'] == null){unset($post['login']);}
 //if($post['passw'] == null){unset($post['passw']);}
@@ -8,9 +10,22 @@ $handle = fopen("base.txt", "r");
 while (!feof($handle)) {
     $buffer = fgets($handle, 4096);
     $massivatt = unserialize($buffer);
-    if($post['login'] === $massivatt['login'] && $post['passw'] === $massivatt['passw'] && $massivatt['login'] != '')
-    {echo $post['login']."такой юзер есть".$massivatt['login'];}
-    else {echo "нет";}
+
+
+
+        $chto_tam_parol = password_verify($post['passw'], $massivatt['passw']);
+
+
+
+   // if($post['login'] === $massivatt['login'] && $post['passw'] === $massivatt['passw'] && $massivatt['login'] != '')
+    if($post['login'] === $massivatt['login'] && $chto_tam_parol == true && $massivatt['login'] != '')
+    {
+        $_SESSION['auth'] = true;
+
+
+    }
+
+
 }
 fclose($handle);
 
@@ -68,4 +83,8 @@ fclose($handle);
         </div><br>
         <button class="btn btn-success" type="submit">Зарегистрироваться</button>
     </form>
+
+
+<a href="secret.php">Вход в секретный раздел</a>
+<a href="exit.php">Выход</a>
 
