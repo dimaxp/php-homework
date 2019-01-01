@@ -2,35 +2,35 @@
 $files = $_FILES;
 zagruzka($files['picture']);
 
-//var_dump($files['picture']);
+
+
+
+
 
 function zagruzka($fil)
 {
-$file_count = count($fil);
+$file_count = count($fil['name']);
+
+
+
 for ($i=0; $i < $file_count; $i++) {
 
- foreach ($fil as $val) {
+if($fil['type'][$i] != "image/png")
+    {
+        echo $fil['name'][$i]."не подходит по типу файла, т.к. его тип файла - ".$fil['type'][$i]."<br>";
 
-        if ($fil['size'][$i] >= 30000) {
-        echo $fil['name'][$i]."не подходит по размеру";
-            return;
-        }
-        else if($fil['type'][$i] != 'image/png')
-        {
-            echo $fil['name'][$i]."не подходит по типу файла";
-            return;
-        }
-        else {
+    }
+else if ($fil['size'][$i] > 90000) {
+        echo $fil['name'][$i]."не подходит по размеру, т.к. его размер превышает 90000 составляет - ".$fil['size'][$i]."<br>";
 
-            echo $fil['name'][$i]."подходит для загрузки";
-        }
-
-
-
-
- }
-
+    }
+ else if ($fil['type'][$i] == "image/png" && $fil['size'][$i] < 90000) {
+      $tmp_name = $fil['tmp_name'][$i];
+      $name = $fil['name'][$i];
+     move_uploaded_file($tmp_name, "upload/$name");
+     echo "файл - ".$name." успешно загружен"."<br>";
 }
+
 
 
 
@@ -39,31 +39,6 @@ for ($i=0; $i < $file_count; $i++) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*if ($val['size'] >= 30000)
-{
-    echo $val['name']."не подходит по размеру";
-    break;
-}*/
-
-//var_dump($fil);
-
-//$name = $files['picture']['name'];
-//$tmp_name = $files['picture']['tmp_name'];
-//var_dump($tmp_name);
-
-//move_uploaded_file($tmp_name, "data/$name");
 
 
 ?>

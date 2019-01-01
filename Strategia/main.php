@@ -88,8 +88,9 @@ class TimeFileLogger implements Strategy
 
 
 $context = new Context();
-$context->setStrategy(new TimeFileLogger());
 $context->doSomeBusinessLogic($post['text_log']);
+$context->setStrategy(new TimeFileLogger());
+
 
 ?>
 
