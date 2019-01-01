@@ -52,7 +52,7 @@ fclose($handle);
                 <input name="passw"  id="passw" required placeholder="Введите Ваш пароль" type="password"></label>
         </div>
         <br>
-        <button class="btn btn-success" type="submit">Войти</button>
+        <button id="bauth" class="btn btn-success" type="submit">Войти</button>
     </form>
 
 
@@ -81,10 +81,12 @@ fclose($handle);
             <label for="passw_reg">
                 <input id="passw_reg" name="passw_regpovt" required placeholder="Повторите пароль" type="password"></label>
         </div><br>
-        <button class="btn btn-success" type="submit">Зарегистрироваться</button>
+        <button id="breg" class="btn btn-success" type="submit">Зарегистрироваться</button>
     </form>
 
 
 <a href="secret.php">Вход в секретный раздел</a>
 <a href="exit.php">Выход</a>
 
+<script src="jq/jquery3.3.1.js"></script>
+<script src="jq/authandreg.js"></script>
